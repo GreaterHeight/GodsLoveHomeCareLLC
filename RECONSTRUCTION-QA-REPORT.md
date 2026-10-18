@@ -1,33 +1,29 @@
 # Reconstruction QA — God's Love Home Care, LLC
 
-## Latest automated audit
-- HTML documents scanned: 19
-- Unresolved local references after URL-decoding: 0
-- Pages missing viewport metadata: 0
-- Image elements missing an `alt` attribute: 0
-- Pages missing a primary `<h1>`: 0
-- Pages missing a meta description: 0
+## Current preview-path fix
+The earlier preview screenshot showed browser-default styling and broken images. The HTML was using root-absolute local paths, which can fail when opened directly from disk or served beneath a repository subpath. This version rewrites root-absolute HTML `href`, `src`, `poster`, `action`, and common lazy-image attributes to page-relative paths.
 
-## Work completed in this pass
-- Added a descriptive meta description to the custom `404.html` page.
-- Added visually hidden primary headings to pages that lacked an `<h1>` while preserving visible layout.
-- Regenerated the page-level QA matrix.
-- Local reference validation decodes URL-encoded paths before checking disk, so filenames containing spaces are checked correctly.
-- JavaScript syntax validation: 16 JavaScript files checked, no syntax failures.
+## Structural checks
+- 19 HTML documents included.
+- HTML local-reference audit: zero unresolved references after the path rewrite.
+- The latest prior audit found no missing viewport metadata, primary H1 headings, image alt attributes, or meta descriptions.
+- 16 JavaScript files passed syntax checks in the prior audit.
+- ZIP integrity is checked after packaging.
 
-## Still outstanding
-- Eight unique original banner/background asset paths are absent from the HTTrack archive. See `GodsLoveHomeCare_Missing_Background_Assets.csv`.
-- The homepage audio file `Discover-God's-Love-Homecare.mp3` is absent from the archive.
-- Public search indexing confirms the original site's Home, About Us, Our Services and Our Career pages, but direct source-page fetching timed out and direct asset recovery could not be completed in this execution environment. No missing original asset is claimed as recovered.
-- Missing backgrounds currently use neutral fallback styling; this is not exact visual fidelity.
-- Browser screenshot and interaction testing remain incomplete because browser navigation was blocked by the execution environment.
-- Contact, newsletter and application forms are not production-connected.
+## Still not verified
+- No successful browser screenshot comparison has been completed in this execution environment.
+- Eight original banner/background asset paths remain absent from the HTTrack archive.
+- The homepage audio file `Discover-God's-Love-Homecare.mp3` remains absent.
+- Contact, newsletter, and application forms are not production-connected.
 - The source application form requests SSN and date of birth. Do not activate collection without an approved secure provider and data-handling process.
 - GitHub Pages deployment and domain cutover have not been performed.
 
+## Preview
+Extract the package and run `python -m http.server 8000` from the extracted site directory, then open `http://localhost:8000/`. Do not open the HTML file directly as `file://`.
+
 ## Acceptance sequence
-1. Recover the original missing images/audio, or get client approval for specific replacements/omissions.
-2. Complete desktop/tablet/mobile visual comparison and interactive testing.
-3. Approve secure form and newsletter providers.
-4. Confirm GitHub Pages URL structure and test deployed paths.
-5. Obtain client approval before changing DNS.
+1. Preview through a local HTTP server and inspect desktop/tablet/mobile.
+2. Recover original missing assets or obtain approval for replacements.
+3. Test navigation, search, forms, and interactive controls.
+4. Approve secure form/newsletter providers.
+5. Deploy to a staging GitHub Pages URL, verify paths, and obtain sign-off before DNS changes.
