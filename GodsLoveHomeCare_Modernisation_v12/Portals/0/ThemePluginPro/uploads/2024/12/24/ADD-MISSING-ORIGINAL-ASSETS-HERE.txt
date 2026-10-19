@@ -1,0 +1,1 @@
+Place the original missing asset(s) in this folder using the exact filename(s) and case shown in MISSING-ASSET-PLACEMENT-MANIFEST.csv. Do not rename the asset. Once the real file is added, the website's existing reference should load it automatically. This note is not a substitute asset.

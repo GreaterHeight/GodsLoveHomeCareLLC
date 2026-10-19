@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+
+<html lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1" name="viewport"/>
+<title>Search | God's Love Home Care, LLC</title>
+<meta name="description" content="Search public pages and resources on the God’s Love Home Care, LLC website."/>
+<link rel="canonical" href="https://godslovehomecarellc.com/Search/"/>
+<meta property="og:type" content="website"/>
+<meta property="og:site_name" content="God's Love Home Care, LLC"/>
+<meta property="og:title" content="Search | God&#x27;s Love Home Care, LLC"/>
+<meta property="og:description" content="Search public pages and resources on the God’s Love Home Care, LLC website."/>
+<meta property="og:url" content="https://godslovehomecarellc.com/Search/"/>
+<meta name="twitter:card" content="summary_large_image"/>
+<meta name="twitter:title" content="Search | God&#x27;s Love Home Care, LLC"/>
+<meta name="twitter:description" content="Search public pages and resources on the God’s Love Home Care, LLC website."/>
+
+<style>
+:root{--green:#077920;--gold:#eab14d;--ink:#242824;--muted:#5d665f;--paper:#f7f8f5}
+*{box-sizing:border-box}body{margin:0;font:16px/1.65 "Open Sans",Arial,sans-serif;color:var(--ink);background:var(--paper)}
+header{background:#fff;border-bottom:1px solid #e3e8e2;padding:18px 5vw;display:flex;align-items:center;justify-content:space-between;gap:20px;flex-wrap:wrap}
+header a{color:var(--green);font-weight:700;text-decoration:none}nav{display:flex;gap:18px;flex-wrap:wrap}main{max-width:980px;margin:0 auto;padding:48px 24px 80px}
+h1{font-size:clamp(2rem,4vw,3rem);line-height:1.15;margin:0 0 12px}p{color:var(--muted)}
+.searchbar{display:flex;gap:10px;margin:28px 0 36px}.searchbar input{flex:1;min-width:0;padding:14px 16px;border:1px solid #cbd5ca;border-radius:4px;font:inherit}
+button{background:var(--green);color:#fff;border:0;border-radius:4px;padding:14px 20px;font:inherit;font-weight:700;cursor:pointer}
+.result{background:#fff;border:1px solid #e0e6df;border-radius:6px;padding:20px;margin:14px 0}.result h2{font-size:1.25rem;margin:0 0 6px}.result a{color:var(--green)}.result p{margin:6px 0 0}
+#search-status{font-weight:600}.back{display:inline-block;margin-top:24px;color:var(--green)}
+</style>
+<link rel="stylesheet" href="../assets/css/modern.css"/>
+<link rel="manifest" href="../site.webmanifest"/>
+<meta name="robots" content="noindex,follow"/></head>
+<body>
+<header><a href="../">GOD'S LOVE HOME CARE, LLC</a><nav><a href="../About-Us/">About Us</a><a href="../Our-Services/">Our Services</a><a href="../Our-Career/">Career</a><a href="../Blog/">Blog</a><a href="../Resources/">Resources</a><a href="../Contact-Us/">Contact Us</a></nav></header>
+<main><h1>Search the website</h1><p>Find information across the public pages of God's Love Home Care, LLC.</p>
+<form class="searchbar" id="search-form"><input aria-label="Search query" id="search-query" placeholder="Enter a keyword or phrase" required="" type="search"/><button type="submit">Search</button></form>
+<div aria-live="polite" id="search-status"></div><div id="search-results"></div><a class="back" href="../">← Back to Home</a></main>
+<script>
+(async function(){
+ const params=new URLSearchParams(location.search);const initial=params.get('q')||'';const input=document.getElementById('search-query');input.value=initial;
+ let docs=[];try{const r=await fetch('/assets/data/search-index.json');docs=await r.json()}catch(e){}
+ const form=document.getElementById('search-form'),status=document.getElementById('search-status'),results=document.getElementById('search-results');
+ function run(q){results.innerHTML='';const terms=q.toLowerCase().trim().split(/\s+/).filter(Boolean);if(!terms.length){status.textContent='Enter a search term.';return}
+ const matches=docs.map(d=>{const hay=(d.title+' '+d.text).toLowerCase();return {...d,score:terms.reduce((n,t)=>n+(hay.includes(t)?1:0),0)}}).filter(d=>d.score>0).sort((a,b)=>b.score-a.score);
+ status.textContent=matches.length?matches.length+' result(s) found.':'No results found. Try a different keyword.';
+ for(const d of matches){const card=document.createElement('article');card.className='result';const h=document.createElement('h2');const a=document.createElement('a');a.href=d.url;a.textContent=d.title;h.appendChild(a);const p=document.createElement('p');const idx=d.text.toLowerCase().indexOf(terms[0]);p.textContent=(idx>=0?d.text.slice(Math.max(0,idx-80),Math.min(d.text.length,idx+220)):d.text.slice(0,240))+'…';card.append(h,p);results.appendChild(card)}
+ }
+ form.addEventListener('submit',e=>{e.preventDefault();const q=input.value.trim();history.replaceState(null,'','?q='+encodeURIComponent(q));run(q)});if(initial)run(initial);
+})();
+</script>
+<script src="../assets/js/analytics.js" defer></script>
+</body></html>

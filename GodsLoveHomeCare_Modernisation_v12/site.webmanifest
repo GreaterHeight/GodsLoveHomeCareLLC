@@ -1,0 +1,9 @@
+{
+  "name": "God's Love Home Care, LLC",
+  "short_name": "God's Love Care",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#ffffff",
+  "theme_color": "#075b2b",
+  "description": "Compassionate home care information and resources."
+}
