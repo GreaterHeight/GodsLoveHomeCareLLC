@@ -115,3 +115,67 @@
     flex:0 0 50%!important;
   }
 }
+
+
+/* About Us — Mission Statement: keep the copy in its own column beside the image. */
+body#Body .about-mission-row {
+  display:grid!important;
+  grid-template-columns:minmax(0, 5fr) minmax(0, 6fr);
+  align-items:center!important;
+  column-gap:clamp(24px, 3vw, 42px);
+  width:100%;
+  margin-left:0!important;
+  margin-right:0!important;
+}
+body#Body .about-mission-row > .right-full-column,
+body#Body .about-mission-row > .about-mission-copy {
+  width:auto!important;
+  max-width:none!important;
+  min-width:0!important;
+  flex:none!important;
+  float:none!important;
+  margin:0!important;
+  padding-left:0!important;
+  padding-right:0!important;
+  box-sizing:border-box;
+}
+body#Body .about-mission-row .full-column-inner {
+  width:100%;
+  max-width:100%;
+  padding-left:0!important;
+  padding-right:0!important;
+}
+body#Body .about-mission-row .Digital01-section-img,
+body#Body .about-mission-row .Digital01-section-img img {
+  display:block;
+  width:100%;
+  max-width:100%;
+}
+body#Body .about-mission-row .Digital01-section-img img {
+  height:auto!important;
+  object-fit:cover;
+  transform:none!important;
+}
+body#Body .about-mission-row .about-mission-copy {
+  position:relative!important;
+  inset:auto!important;
+  z-index:1;
+}
+body#Body .about-mission-row .about-mission-copy .title-34,
+body#Body .about-mission-row .about-mission-copy p {
+  max-width:100%!important;
+}
+@media (max-width: 991.98px) {
+  body#Body .about-mission-row {
+    grid-template-columns:minmax(0,1fr)!important;
+    row-gap:26px;
+  }
+  body#Body .about-mission-row > .right-full-column,
+  body#Body .about-mission-row > .about-mission-copy {
+    width:100%!important;
+    max-width:100%!important;
+  }
+  body#Body .about-mission-row .about-mission-copy {
+    padding:0!important;
+  }
+}
