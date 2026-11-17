@@ -1,0 +1,94 @@
+
+/* Homepage reference reconstruction — based on supplied HomeGodslove.png */
+body#Body.home-reference-page .is-boxes{border-radius:0!important;margin:0!important}
+body#Body.home-reference-page .is-boxes.home-hero{}
+/* Hero */
+body#Body.home-reference-page .is-boxes.home-hero .is-container{
+ max-width:1200px!important;padding:92px 24px 150px!important;position:relative;z-index:1;
+}
+body#Body.home-reference-page .is-boxes.home-hero{
+ min-height:500px;background-color:#075b2b;background-image:linear-gradient(90deg,rgba(0,78,35,.78),rgba(0,94,43,.56)),var(--glhc-home-hero,none);
+ background-position:center;background-size:cover;color:#fff;position:relative;
+}
+body#Body.home-reference-page .is-boxes.home-hero h1,
+body#Body.home-reference-page .is-boxes.home-hero p{color:#fff!important;text-align:center}
+body#Body.home-reference-page .is-boxes.home-hero h1{font-size:clamp(1.65rem,3.4vw,2.6rem)!important;line-height:1.2!important;font-weight:750!important;max-width:850px;margin:0 auto 12px}
+body#Body.home-reference-page .is-boxes.home-hero .row{width:100%!important;max-width:100%!important}
+body#Body.home-reference-page .is-boxes.home-hero .col-md-6{flex:0 0 100%;max-width:100%;text-align:center}
+body#Body.home-reference-page .is-boxes.home-hero p{max-width:760px;margin:12px auto;font-size:15px}
+/* Four gold service cards overlapping the hero */
+body#Body.home-reference-page .is-boxes.home-welcome{position:relative;z-index:2;margin-top:-92px!important;background:transparent!important}
+body#Body.home-reference-page .is-boxes.home-welcome .is-container{max-width:1160px!important;padding:0 22px 45px!important}
+body#Body.home-reference-page .infobox-carousel01 .carousel-wrapper{padding:0!important}
+body#Body.home-reference-page .infobox-carousel01 .carousel-scroll{display:grid!important;grid-template-columns:repeat(4,minmax(0,1fr));gap:20px;overflow:visible!important}
+body#Body.home-reference-page .infobox-carousel01 .carousel-item{padding:0!important;min-width:0}
+body#Body.home-reference-page .infobox-carousel01 .item-box{background:#eab14d!important;color:#fff!important;border-radius:4px!important;padding:22px 16px 24px!important;box-shadow:none!important;min-height:300px}
+body#Body.home-reference-page .infobox-carousel01 .item-box:after{background:#eab14d!important;opacity:1!important;border-radius:4px!important}
+body#Body.home-reference-page .infobox-carousel01 .item-box .icon img{width:78px;height:78px;object-fit:cover;border-radius:50%;margin:0 auto 14px}
+body#Body.home-reference-page .infobox-carousel01 .item-box .title{font-size:18px!important;line-height:1.25;color:#fff!important;margin-bottom:10px}
+body#Body.home-reference-page .infobox-carousel01 .item-box .info,
+body#Body.home-reference-page .infobox-carousel01 .item-box p{color:#fff!important;font-size:12px;line-height:1.55}
+body#Body.home-reference-page .infobox-carousel01 .carousel-pagination{display:none!important}
+/* Welcome / about block */
+body#Body.home-reference-page .is-boxes.home-welcome .medical01-banner-bottom{margin-top:0!important}
+body#Body.home-reference-page .is-boxes.home-welcome .row.align-items-center{padding-top:24px}
+body#Body.home-reference-page .is-boxes.home-welcome .title-19 .title{color:#07812b!important;font-size:clamp(2rem,4vw,3.2rem)!important;line-height:1.2}
+body#Body.home-reference-page .is-boxes.home-welcome .title-19 small{font-size:15px;color:#1d2c22}
+body#Body.home-reference-page .is-boxes.home-welcome p{font-size:14px;line-height:1.75}
+/* Services offer — gold field */
+body#Body.home-reference-page .is-boxes.home-services{background:#eab14d!important;color:#fff;padding:54px 20px 58px}
+body#Body.home-reference-page .is-boxes.home-services .is-container{max-width:1080px!important}
+body#Body.home-reference-page .is-boxes.home-services .Architecture-title{margin:0 auto 32px}
+body#Body.home-reference-page .is-boxes.home-services .Architecture-title .icon img{width:54px;height:54px;object-fit:contain}
+body#Body.home-reference-page .is-boxes.home-services .Architecture-title .title{font-size:clamp(2rem,4vw,3.2rem)!important;line-height:1.2}
+body#Body.home-reference-page .is-boxes.home-services .custom-module{max-width:100%}
+body#Body.home-reference-page .is-boxes.home-services .item-box,
+body#Body.home-reference-page .is-boxes.home-services .service-box{background:#fff;color:#173b28}
+body#Body.home-reference-page .is-boxes.home-services .title,
+body#Body.home-reference-page .is-boxes.home-services h3{color:#075b2b}
+body#Body.home-reference-page .is-boxes.home-services .button-01{background:#07812b!important;color:#fff!important;border-radius:2px!important}
+/* Service cards from the content builder */
+body#Body.home-reference-page .is-boxes.home-services .col-md-4 .icon img{border-radius:50%;width:54px;height:54px;object-fit:cover}
+/* Why choose us */
+body#Body.home-reference-page .is-boxes.home-advantages{background:#00621d!important;color:#fff;padding:54px 20px 60px}
+body#Body.home-reference-page .is-boxes.home-advantages h3,
+body#Body.home-reference-page .is-boxes.home-advantages p{color:#fff!important}
+body#Body.home-reference-page .is-boxes.home-advantages .title-35 h3{font-size:clamp(2rem,4vw,3.1rem)!important}
+body#Body.home-reference-page .is-boxes.home-advantages .icon-box40 img{width:76px;height:76px;object-fit:cover;border-radius:50%}
+body#Body.home-reference-page .is-boxes.home-advantages .icon-box40 .title{color:#eab14d!important}
+/* Mission and service area */
+body#Body.home-reference-page .is-boxes.home-mission,
+body#Body.home-reference-page .is-boxes.home-service-area{background:#fff!important;padding:62px 22px}
+body#Body.home-reference-page .is-boxes.home-mission .is-container,
+body#Body.home-reference-page .is-boxes.home-service-area .is-container{max-width:1100px!important}
+body#Body.home-reference-page .is-boxes.home-mission .title-34 .title{font-size:clamp(1.8rem,3.5vw,2.8rem)!important}
+body#Body.home-reference-page .is-boxes.home-mission img,
+body#Body.home-reference-page .is-boxes.home-service-area img{border-radius:0!important;box-shadow:0 5px 20px rgba(0,0,0,.12)}
+/* Footer */
+body#Body.home-reference-page .is-boxes.gh-footer-contrast{background:#003b16!important;padding:28px 20px 10px!important;border-radius:0!important}
+body#Body.home-reference-page .is-boxes.gh-footer-contrast .spacer.height-100{height:12px!important}
+body#Body.home-reference-page .is-boxes.gh-footer-contrast h3{color:#eab14d!important}
+body#Body.home-reference-page .is-boxes.gh-footer-contrast p,
+body#Body.home-reference-page .is-boxes.gh-footer-contrast a,
+body#Body.home-reference-page .is-boxes.gh-footer-contrast li{color:#fff!important}
+body#Body.home-reference-page .is-boxes.gh-footer-contrast .row{row-gap:24px}
+/* Remove extension artefacts from copied source markup */
+body#Body.home-reference-page grammarly-extension,
+body#Body.home-reference-page sider-quick-compose-btn,
+body#Body.home-reference-page pwa-container-wrapper{display:none!important}
+@media(max-width:767px){
+ body#Body.home-reference-page .is-boxes.home-hero{min-height:360px}
+ body#Body.home-reference-page .is-boxes.home-hero .is-container{padding:70px 18px 120px!important}
+ body#Body.home-reference-page .is-boxes.home-welcome{margin-top:-70px!important}
+ body#Body.home-reference-page .infobox-carousel01 .carousel-scroll{grid-template-columns:repeat(2,minmax(0,1fr));gap:12px}
+ body#Body.home-reference-page .infobox-carousel01 .item-box{min-height:260px;padding:16px 12px!important}
+ body#Body.home-reference-page .infobox-carousel01 .item-box .icon img{width:62px;height:62px}
+ body#Body.home-reference-page .is-boxes.home-services,
+ body#Body.home-reference-page .is-boxes.home-advantages{padding:42px 16px}
+ body#Body.home-reference-page .is-boxes.home-mission,
+ body#Body.home-reference-page .is-boxes.home-service-area{padding:42px 18px}
+ body#Body.home-reference-page .is-boxes.home-service-area .row.align-items-center{display:flex;flex-direction:column;gap:20px}
+}
+@media(max-width:420px){
+ body#Body.home-reference-page .infobox-carousel01 .carousel-scroll{grid-template-columns:1fr}
+}

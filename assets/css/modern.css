@@ -19,3 +19,20 @@ body#Body .contentpane img,body#Body .ContentPane img{border-radius:10px}body#Bo
 body#Body{overflow-x:hidden} body#Body .dng-row>[class*="col-"],body#Body .dng-row>[class^="col-"]{min-width:0} body#Body img{height:auto} body#Body picture{display:block;max-width:100%} body#Body .contentpane img,body#Body .ContentPane img{object-fit:cover} body#Body .header-wrap{position:relative} body#Body .footer,body#Body #Skip-footer{border-top:3px solid rgba(234,177,77,.65)} body#Body .contentpane a,body#Body .ContentPane a{overflow-wrap:anywhere}
 @media(max-width:991px){body#Body .header-wrap .menu{gap:10px}body#Body .dng-main .container{max-width:100%}}
 @media(max-width:767px){body#Body .contentpane .container,body#Body .ContentPane .container{padding-top:24px;padding-bottom:24px}body#Body h1{line-height:1.12}body#Body .is-box,body#Body .is-boxes{margin-bottom:16px}body#Body .header-wrap{backdrop-filter:none}}
+
+
+/* Stage 3: prevent short pages (especially the homepage) from leaving a blank
+   white area below the footer. The footer remains in normal document flow. */
+html, body#Body { min-height: 100%; }
+body#Body { min-height: 100vh; }
+body#Body .dng-main { min-height: 100vh; }
+body#Body #dng-wrapper {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+body#Body #dnn_content { flex: 1 0 auto; }
+body#Body footer.footer, body#Body #Skip-footer {
+  flex: 0 0 auto;
+  margin-top: auto;
+}
