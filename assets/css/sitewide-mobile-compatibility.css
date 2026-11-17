@@ -1,0 +1,117 @@
+/*
+ * Site-wide responsive compatibility layer.
+ * Mobile/tablet-only overrides; desktop presentation is intentionally untouched.
+ */
+@media (max-width: 767.98px) {
+  html, body { max-width:100%; overflow-x:hidden; }
+  body#Body { overflow-x:hidden; }
+  body#Body .container,
+  body#Body .is-container,
+  body#Body .layout-container {
+    width:100%!important;
+    max-width:100%!important;
+    padding-left:18px!important;
+    padding-right:18px!important;
+    box-sizing:border-box;
+  }
+  body#Body .row {
+    margin-left:0!important;
+    margin-right:0!important;
+  }
+  body#Body .row > [class*="col-"],
+  body#Body .row > [class^="col-"],
+  body#Body .dng-row > [class*="col-"],
+  body#Body .dng-row > [class^="col-"] {
+    width:100%!important;
+    max-width:100%!important;
+    flex:0 0 100%!important;
+    min-width:0!important;
+    float:none!important;
+    box-sizing:border-box;
+  }
+  body#Body img,
+  body#Body video,
+  body#Body iframe {
+    max-width:100%!important;
+  }
+  body#Body img {
+    height:auto;
+    object-fit:contain;
+  }
+  /* Disable parallax/negative transforms that can push About Us imagery over text. */
+  body#Body .pscroll,
+  body#Body [data-parallax],
+  body#Body [data-parallax2],
+  body#Body .img-01,
+  body#Body .img-02,
+  body#Body .img-03 {
+    transform:none!important;
+    translate:none!important;
+  }
+  body#Body .is-boxes,
+  body#Body .is-box,
+  body#Body .is-container,
+  body#Body .layout-container,
+  body#Body .contentpane,
+  body#Body .ContentPane {
+    height:auto!important;
+    min-height:0;
+    overflow:visible;
+  }
+  body#Body .is-boxes .row,
+  body#Body .layout-container .row {
+    display:flex;
+    flex-wrap:wrap;
+    align-items:stretch;
+  }
+  body#Body .is-boxes [style*="position: absolute"],
+  body#Body .layout-container [style*="position: absolute"] {
+    max-width:100%;
+  }
+  body#Body h1 { font-size:clamp(1.85rem,8vw,2.6rem); line-height:1.15; }
+  body#Body h2 { font-size:clamp(1.55rem,6.5vw,2.1rem); line-height:1.2; }
+  body#Body h3 { font-size:clamp(1.2rem,5vw,1.55rem); line-height:1.3; }
+  body#Body p, body#Body li { overflow-wrap:anywhere; }
+  body#Body table { display:block; max-width:100%; overflow-x:auto; }
+  body#Body .gh-footer-contrast.home-footer { padding-top:34px!important; padding-bottom:24px!important; }
+  body#Body .gh-footer-contrast.home-footer .spacer.height-100 { height:18px!important; }
+  body#Body .gh-footer-contrast.home-footer .row > [class*="col-"] {
+    margin-bottom:24px;
+  }
+  body#Body .gh-footer-contrast.home-footer .Medical01-footer-table {
+    width:100%!important;
+    table-layout:auto;
+  }
+  body#Body .gh-footer-bottom-inner {
+    display:flex!important;
+    flex-direction:column!important;
+    align-items:center!important;
+    justify-content:center!important;
+    gap:10px!important;
+    text-align:center!important;
+    padding:12px 14px!important;
+  }
+  body#Body .gh-footer-bottom-links {
+    display:flex!important;
+    flex-wrap:wrap!important;
+    justify-content:center!important;
+    gap:6px 9px!important;
+  }
+  body#Body .gh-footer-bottom-copyright,
+  body#Body .gh-footer-bottom-credit { text-align:center!important; }
+}
+@media (min-width:768px) and (max-width:991.98px) {
+  body#Body .container,
+  body#Body .is-container,
+  body#Body .layout-container {
+    max-width:100%!important;
+    padding-left:24px!important;
+    padding-right:24px!important;
+  }
+  body#Body img, body#Body video { max-width:100%; height:auto; }
+  body#Body .row { flex-wrap:wrap; }
+  body#Body .gh-footer-contrast.home-footer .row > .col-md-6.col-lg-3 {
+    width:50%!important;
+    flex:0 0 50%!important;
+  }
+}
