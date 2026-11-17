@@ -1,0 +1,142 @@
+
+/* v16 corrective patch: restore original video hero, normal card widths and page flow */
+html, body { min-height:100%; }
+body#Body.home-reference-page {
+  min-height:100vh;
+  display:flex;
+  flex-direction:column;
+}
+body#Body.home-reference-page > form#Form,
+body#Body.home-reference-page form#Form {
+  min-height:100vh;
+  display:flex;
+  flex-direction:column;
+}
+body#Body.home-reference-page #Body,
+body#Body.home-reference-page .dng-main,
+body#Body.home-reference-page #Content { min-height:0; }
+body#Body.home-reference-page .dng-main { flex:1 0 auto; }
+body#Body.home-reference-page footer.footer,
+body#Body.home-reference-page #Skip-footer { flex-shrink:0; margin-top:auto!important; }
+
+/* The source video belongs to the outer content-builder section, not a CSS background URL. */
+body#Body.home-reference-page .is-section:has(.home-hero) {
+  position:relative!important;
+  min-height:clamp(430px, 43vw, 560px)!important;
+  height:auto!important;
+  overflow:hidden!important;
+  background:#075b2b!important;
+}
+body#Body.home-reference-page .is-section:has(.home-hero) > .is-overlay {
+  position:absolute!important; inset:0!important; z-index:0!important;
+  display:block!important; height:100%!important; min-height:100%!important;
+}
+body#Body.home-reference-page .is-section:has(.home-hero) .is-overlay-bg {
+  background-image:none!important;
+}
+body#Body.home-reference-page .is-section:has(.home-hero) .is-overlay-Video-bg {
+  position:absolute!important; inset:0!important; display:block!important;
+  width:100%!important; height:100%!important; overflow:hidden!important;
+}
+body#Body.home-reference-page .is-section:has(.home-hero) .is-overlay-Video-bg video {
+  position:absolute!important; inset:0!important; display:block!important;
+  width:100%!important; height:100%!important; max-width:none!important;
+  object-fit:cover!important; border-radius:0!important;
+}
+body#Body.home-reference-page .is-section:has(.home-hero) .is-video-overlay-color {
+  position:absolute!important; inset:0!important; z-index:1!important;
+}
+body#Body.home-reference-page .is-boxes.home-hero {
+  position:relative!important; z-index:2!important;
+  min-height:clamp(430px, 43vw, 560px)!important;
+  height:auto!important; display:flex!important; align-items:center!important;
+  background:transparent!important; color:#fff!important;
+}
+body#Body.home-reference-page .is-boxes.home-hero .is-container {
+  width:100%!important; max-width:1200px!important;
+  padding:72px 24px 125px!important; margin:0 auto!important;
+}
+body#Body.home-reference-page .is-boxes.home-hero .row,
+body#Body.home-reference-page .is-boxes.home-hero .row[style] {
+  width:100%!important; max-width:100%!important; margin-left:0!important; margin-right:0!important;
+}
+body#Body.home-reference-page .is-boxes.home-hero .col-md-6 {
+  flex:0 0 100%!important; width:100%!important; max-width:100%!important;
+}
+body#Body.home-reference-page .is-boxes.home-hero h1,
+body#Body.home-reference-page .is-boxes.home-hero p { text-align:center!important; }
+
+/* Four proper desktop cards. Override the legacy carousel's fixed/flex item sizing. */
+body#Body.home-reference-page .is-boxes.home-welcome .infobox-carousel01,
+body#Body.home-reference-page .is-boxes.home-welcome .carousel-wrapper,
+body#Body.home-reference-page .is-boxes.home-welcome .carousel-scroll {
+  width:100%!important; max-width:100%!important; min-width:0!important;
+}
+body#Body.home-reference-page .is-boxes.home-welcome .carousel-scroll {
+  display:grid!important; grid-template-columns:repeat(4,minmax(0,1fr))!important;
+  gap:18px!important; overflow:visible!important; transform:none!important;
+}
+body#Body.home-reference-page .is-boxes.home-welcome .carousel-item {
+  display:block!important; flex:initial!important; flex-basis:auto!important;
+  width:auto!important; max-width:none!important; min-width:0!important;
+  padding:0!important; margin:0!important;
+}
+body#Body.home-reference-page .is-boxes.home-welcome .item-box {
+  width:100%!important; min-height:300px!important; height:100%!important;
+  padding:22px 16px!important; box-sizing:border-box!important;
+}
+body#Body.home-reference-page .is-boxes.home-welcome .item-box .icon img {
+  display:block!important; width:78px!important; height:78px!important;
+  max-width:78px!important; object-fit:cover!important; border-radius:50%!important;
+}
+body#Body.home-reference-page .is-boxes.home-welcome .item-box .title {
+  font-size:18px!important; line-height:1.25!important; overflow-wrap:normal!important;
+}
+body#Body.home-reference-page .is-boxes.home-welcome .item-box .info {
+  font-size:12px!important; line-height:1.5!important; overflow-wrap:normal!important;
+}
+
+/* Do not leave a dead audio-player shell in the flow. */
+body#Body.home-reference-page .elementor-widget-html:has(audio:empty),
+body#Body.home-reference-page .elementor-widget-html:has(#audio-player),
+body#Body.home-reference-page .elementor-widget-html:has(.audio-player),
+body#Body.home-reference-page .elementor-widget-html:has(button[aria-label*="audio" i]) {
+  display:none!important;
+}
+
+/* Eliminate phantom trailing height; retain normal content-driven page height. */
+body#Body.home-reference-page .is-section:empty,
+body#Body.home-reference-page .is-boxes:empty { display:none!important; }
+body#Body.home-reference-page #dnn_ContentPane .DNNEmptyPane { display:none!important; }
+body#Body.home-reference-page .fixed-widget-list { z-index:1000; }
+
+@media(max-width:991px) {
+  body#Body.home-reference-page .is-boxes.home-welcome .carousel-scroll {
+    grid-template-columns:repeat(2,minmax(0,1fr))!important;
+  }
+  body#Body.home-reference-page .is-section:has(.home-hero),
+  body#Body.home-reference-page .is-boxes.home-hero { min-height:430px!important; }
+}
+@media(max-width:575px) {
+  body#Body.home-reference-page .is-boxes.home-hero .is-container { padding:58px 18px 110px!important; }
+  body#Body.home-reference-page .is-boxes.home-welcome .carousel-scroll {
+    grid-template-columns:1fr!important; gap:14px!important;
+  }
+  body#Body.home-reference-page .is-boxes.home-welcome .item-box { min-height:0!important; }
+}
+
+/* Correct the static DNN wrapper's document-height behaviour. */
+body#Body.home-reference-page > .dng-main {
+  flex:1 0 auto!important; min-height:100vh!important;
+  display:flex!important; flex-direction:column!important;
+}
+body#Body.home-reference-page #dng-wrapper {
+  flex:1 0 auto!important; min-height:100vh!important;
+  display:flex!important; flex-direction:column!important;
+}
+body#Body.home-reference-page #dng-wrapper > footer.footer {
+  margin-top:auto!important;
+}
+body#Body.home-reference-page .is-section:has(> .elementor-widget-html:empty) {
+  display:none!important; height:0!important; min-height:0!important; padding:0!important; margin:0!important;
+}
