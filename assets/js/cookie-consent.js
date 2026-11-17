@@ -19,8 +19,7 @@
   function openPreferences(){var p=document.querySelector('.glhc-cookie-preferences');if(p){p.hidden=false;var a=p.querySelector('[name="glhc-analytics"]');var m=p.querySelector('[name="glhc-marketing"]');if(a)a.checked=current.analytics;if(m)m.checked=current.marketing;var f=p.querySelector('button');if(f)f.focus();}}
   function createUI(){
     if(document.querySelector('.glhc-cookie-banner'))return;
-    var policy=(document.body&&document.body.dataset.cookiePolicy)||((location.pathname.replace(/index\.html$/,'').replace(/\/$/,'')||'')+'/Cookie-Policy/');
-    if(location.pathname.indexOf('/Cookie-Policy')===0)policy='/Cookie-Policy/';
+    var policy='/Cookie-Policy/';
     var banner=document.createElement('section');banner.className='glhc-cookie-banner';banner.hidden=true;banner.setAttribute('role','region');banner.setAttribute('aria-label','Cookie preferences');
     banner.innerHTML='<h2>Respecting your privacy</h2><p>We use essential browser storage to remember your cookie choice. Optional analytics will remain off unless you allow it. You can change your choice at any time.</p><div class="glhc-cookie-actions"><button type="button" data-cookie-accept>Accept all</button><button type="button" class="secondary" data-cookie-reject>Reject optional</button><button type="button" class="secondary" data-cookie-settings>Preferences</button><a href="'+policy+'">Cookie policy</a></div>';
     var modal=document.createElement('div');modal.className='glhc-cookie-preferences';modal.hidden=true;modal.setAttribute('role','dialog');modal.setAttribute('aria-modal','true');modal.setAttribute('aria-labelledby','glhc-cookie-title');
