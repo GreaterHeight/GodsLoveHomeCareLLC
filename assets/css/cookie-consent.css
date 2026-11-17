@@ -1,0 +1,19 @@
+/* God's Love Home Care — accessible cookie preference banner */
+.glhc-cookie-banner{position:fixed;z-index:3000;left:20px;right:20px;bottom:20px;max-width:760px;margin:0 auto;padding:22px 24px;background:#fff;color:#1c2a22;border:1px solid #d8e3da;border-top:4px solid #eab14d;border-radius:14px;box-shadow:0 18px 55px rgba(0,0,0,.22);font:inherit}
+.glhc-cookie-banner[hidden],.glhc-cookie-preferences[hidden]{display:none!important}
+.glhc-cookie-banner h2,.glhc-cookie-preferences h2{margin:0 0 8px;color:#063d20;font-size:1.25rem;line-height:1.3}
+.glhc-cookie-banner p,.glhc-cookie-preferences p{margin:0 0 14px;font-size:.94rem;line-height:1.55}
+.glhc-cookie-actions{display:flex;flex-wrap:wrap;gap:10px;align-items:center}
+.glhc-cookie-actions button,.glhc-cookie-preferences button{min-height:42px;padding:10px 18px;border:1px solid #075b2b;border-radius:999px;background:#075b2b;color:#fff;font:inherit;font-weight:700;cursor:pointer}
+.glhc-cookie-actions button.secondary,.glhc-cookie-preferences button.secondary{background:#fff;color:#075b2b}
+.glhc-cookie-actions a{color:#075b2b;text-underline-offset:3px;font-weight:650}
+.glhc-cookie-preferences{position:fixed;z-index:3001;inset:0;display:grid;place-items:center;padding:20px;background:rgba(0,0,0,.58)}
+.glhc-cookie-preferences-panel{width:min(100%,540px);max-height:min(90vh,720px);overflow:auto;padding:24px;background:#fff;color:#1c2a22;border-radius:16px;box-shadow:0 20px 70px rgba(0,0,0,.3)}
+.glhc-cookie-choice{display:flex;gap:12px;align-items:flex-start;padding:14px 0;border-top:1px solid #e2e9e3}
+.glhc-cookie-choice input{width:20px;height:20px;margin-top:3px;accent-color:#075b2b}
+.glhc-cookie-choice strong{display:block;color:#063d20}
+.glhc-cookie-choice small{display:block;color:#5b6a61;line-height:1.5}
+.glhc-cookie-preferences .glhc-cookie-actions{margin-top:18px}
+.glhc-cookie-settings-link{display:inline-block;margin:12px 0 0;padding:0;border:0;background:transparent;color:#fff;text-decoration:underline;text-underline-offset:3px;font:inherit;cursor:pointer}
+@media(max-width:600px){.glhc-cookie-banner{left:10px;right:10px;bottom:10px;padding:18px}.glhc-cookie-actions{align-items:stretch}.glhc-cookie-actions button{flex:1 1 100%}.glhc-cookie-preferences-panel{padding:20px}}
+@media(prefers-reduced-motion:no-preference){.glhc-cookie-banner{animation:glhc-cookie-in .2s ease-out}@keyframes glhc-cookie-in{from{transform:translateY(12px);opacity:0}to{transform:translateY(0);opacity:1}}}
